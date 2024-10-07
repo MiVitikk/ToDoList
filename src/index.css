@@ -69,6 +69,10 @@ button:focus-visible {
   text-align: left;
   
 }
+#TodoTable {
+  position: relative;
+  top: 10px;
+}
 
 @media (prefers-color-scheme: light) {
   :root {

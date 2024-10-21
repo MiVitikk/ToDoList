@@ -22,13 +22,15 @@ function App() {
   };
 
   return (
+    
     <Container maxWidth="xl">
+      <h1>My Todolist</h1>
       <CssBaseline />
       <AppBar position="static" color="transparent">
       <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
+        <Box sx={{width:'100%' ,borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label="tabs">
             <Tab label="Hello" value="1" />
             <Tab label="ToDos" value="2" />
             

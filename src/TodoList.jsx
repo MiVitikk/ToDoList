@@ -53,6 +53,12 @@ function TodoList() {
         }
     };
 
+    const removeAllTodos = () => {
+        if (todos != null){
+            setTodos([])
+        }
+    }
+
     return (
 
         <>
@@ -68,11 +74,12 @@ function TodoList() {
                     alignItems="center"
                     >
                     
-                    <TextField label="Description" onChange={newInput} name="desc" value={newTodo.desc} />
-                    <TextField label="Priority" onChange={newInput} name="priority" value={newTodo.priority} />
+                    <TextField label="Description" placeholder="Description" onChange={newInput} name="desc" value={newTodo.desc} />
+                    <TextField label="Priority" placeholder="Priority" onChange={newInput} name="priority" value={newTodo.priority} />
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                         <DatePicker
-                            label="Select date"
+                            label="Date"
+                            placeholder="Date"
                             value={newTodo.date}
                             onChange={handleDate}
                             renderInput={(params) => <TextField {...params} />}
@@ -80,6 +87,7 @@ function TodoList() {
                     </LocalizationProvider>
                     <Button variant="contained" color="gray" onClick={addTodo}>Add</Button>
                     <Button variant="contained" color="gray" onClick={removeTodo}>Delete</Button>
+                    <Button variant="contained" color="gray" onClick={removeAllTodos}>Clear</Button>
                 </Stack>
             </fieldset>
 

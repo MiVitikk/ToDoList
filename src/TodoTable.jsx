@@ -33,9 +33,9 @@ function TodoTable({ todos, setSelectedTodoIndex }) {
 
 
     return (
-        <div id="TodoTable">
+        <div id="TodoTable" role="table" data-testid="todoTableTest">
             
-            <div className="ag-theme-material" style={{ width: 700, height: 500 }}>
+            <div className="ag-theme-material" style={{ width: 700, height: 500 }} >
                 <AgGridReact
                     ref={gridRef}
                     onGridReady={params => gridRef.current = params.api}
@@ -43,6 +43,7 @@ function TodoTable({ todos, setSelectedTodoIndex }) {
                     columnDefs={columnDefs}
                     rowSelection="single"
                     onSelectionChanged={onRowSelected}
+                   
 
                 />
             </div>
